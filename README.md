@@ -156,3 +156,12 @@ Những `libpng warning` ở trên khi chạy chương trình không phải là 
   * Hiểu được logic của game, các bước thiết kế, xây dựng game.
   * Nếu tách file, tách hàm nhiều, viết code như kể chuyện thì rất dễ gỡ lỗi và đọc code cũng rất dễ hiểu.
   * Tưởng tượng và thực thi rất khác xa nhau.
+
+## Nguồn tham khảo:
+  * https://github.com/chauttm/advprogram
+  * https://www.stdio.vn
+  * https://lazyfoo.net
+  * https://wiki.libsdl.org
+  * https://www.libsdl.org/projects/SDL_image/docs/SDL_image.html
+  * https://www.libsdl.org/projects/SDL_mixer/docs/SDL_mixer.html
+  * https://www.libsdl.org/projects/docs/SDL_ttf/SDL_ttf.html
