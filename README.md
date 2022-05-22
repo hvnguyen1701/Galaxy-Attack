@@ -55,7 +55,7 @@ Những `libpng warning` ở trên khi chạy chương trình không phải là 
   
 ## 2. Mô tả chung về trò chơi, các ý tưởng chính
   
-* Người chơi vào vai nhân vật Solu (solution) điều khiển phi thuyền Fantom chiến đấu với kẻ thù trong vũ trụ.
+* Người chơi vào vai nhân vật Solu (solution) điều khiển phi thuyền Fantom chiến đấu với kẻ thù trong vũ trụ (chi tiết cốt truyện có thể xem trong game).
 * Người chơi có lượng giáp tối đa là 5, nếu lượng giáp trở về 0, chỉ cần dính một viên đạn nữa thì trò chơi sẽ kết thúc, nếu va chạm với tàu địch hoặc thiên thạch sẽ lập tức dừng trò chơi bất kể lượng giáp nhiều đến đâu.
 * Cố gắng né tránh đạn của kẻ thù, phi thuyền địch, các viên thiên thạch.
 * Tiêu diệt được một kẻ địch sẽ được điểm, cố gắng lấy được điểm càng cao càng tốt trước khi bị game over.
