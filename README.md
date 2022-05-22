@@ -1,5 +1,9 @@
 # Galaxy Attack
 
+* Họ tên: Hoàng Văn Nguyên
+* Mã sinh viên: 21020370
+* Lớp môn học: INT2215 1 nhóm 8
+
 ## Mục lục
 * [1. Hướng dẫn cài đặt](#huong-dan-cai-dat)  
 * [2. Mô tả chung về trò chơi, các ý tưởng chính](#mo-ta-chung)  
