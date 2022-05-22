@@ -1,0 +1,2 @@
+all:
+	g++ -Isrc/include -Lsrc/lib -o GalaxyAttack Sources/Asteroid.cpp Sources/Background.cpp Sources/Bar.cpp Sources/BaseObject.cpp Sources/Bullet.cpp Sources/Button.cpp Sources/Control.cpp Sources/EnemyShip.cpp Sources/Explosion.cpp Sources/Gate.cpp Sources/Item.cpp Sources/main.cpp Sources/SDL_utils.cpp Sources/Ship.cpp -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
