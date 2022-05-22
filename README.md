@@ -92,17 +92,17 @@ Những `libpng warning` ở trên khi chạy chương trình không phải là 
 
 ### Giao diện người dùng:
   * Màn hình Menu:
-    * Nút Play: bắt đầu chơi.
-    * Nút Help: đọc cốt truyện và hướng dẫn chơi (có 3 trang, có nút bấm Next để sang trang mới).
-    * Nút Exit: thóa khỏi trò chơi.
+    * Nút `Play`: bắt đầu chơi.
+    * Nút `Help`: đọc cốt truyện và hướng dẫn chơi (có 3 trang, có nút bấm `Next` để sang trang mới).
+    * Nút `Exit`: thóa khỏi trò chơi.
   * Màn hình Pause Game:
-    * Nút Continue: tiếp tục chơi game.
-    * Nút Back: trở về màn hình Menu.
+    * Nút `Continue`: tiếp tục chơi game.
+    * Nút `Back`: trở về màn hình Menu.
   * Màn hình Game Over:
     * Click bất kì vào màn hình để về màn hình Menu.
   * Có hiển thị thanh giáp của nhân vật lúc chơi trò chơi.
 
-### Trong lúc chơi trò chơi nếu ấn phím `Esc` hoặc `Alt + Tab` hoặc phím `Windows', game sẽ được dừng lại (chuyển qua màn hình Pause).
+### Trong lúc chơi trò chơi nếu ấn phím `Esc` hoặc `Alt + Tab` hoặc phím `Windows`, game sẽ được dừng lại (chuyển qua màn hình Pause).
 
 ### Âm thanh:
   * Nhạc nền.
