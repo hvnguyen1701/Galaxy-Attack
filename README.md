@@ -37,7 +37,19 @@ $ cd Galaxy-Attack
 $ mingw32-make
 $ ./GalaxyAttack.exe
 ```
-Nếu gặp trục trặc, lỗi, vui lòng liên hệ với em để biết thêm thông tin.
+
+* Chú ý: 
+```
+libpng warning: iCCP: known incorrect sRGB profile
+libpng warning: iCCP: cHRM chunk does not match sRGB
+libpng warning: iCCP: known incorrect sRGB profile
+libpng warning: iCCP: cHRM chunk does not match sRGB
+libpng warning: iCCP: known incorrect sRGB profile
+libpng warning: iCCP: cHRM chunk does not match sRGB
+```
+Những `libpng warning` ở trên khi chạy chương trình không phải là lỗi do code mà là do ảnh lấy từ trên internet.
+  
+* Nếu gặp trục trặc, lỗi, vui lòng liên hệ với em để biết thêm thông tin.
 
 <a name="mo-ta-chung"/>
   
@@ -88,6 +100,9 @@ Nếu gặp trục trặc, lỗi, vui lòng liên hệ với em để biết th�
     * Nút Back: trở về màn hình Menu.
   * Màn hình Game Over:
     * Click bất kì vào màn hình để về màn hình Menu.
+  * Có hiển thị thanh giáp của nhân vật lúc chơi trò chơi.
+
+### Trong lúc chơi trò chơi nếu ấn phím `Esc` hoặc `Alt + Tab` hoặc phím `Windows', game sẽ được dừng lại (chuyển qua màn hình Pause).
 
 ### Âm thanh:
   * Nhạc nền.
@@ -119,7 +134,8 @@ Nếu gặp trục trặc, lỗi, vui lòng liên hệ với em để biết th�
 ## 5. Kết luận, hướng phát triển và các điều tâm đắc rút ra được sau khi hoàn thiện chương trình
   
 ### Kết luận
-  Làm game không quá khó, nhưng cần rất nhiều thời gian, cần có ý tưởng sáng tạo thì mới tạo nên trò chơi cuốn hút được.
+  * Làm game không quá khó, nhưng cần rất nhiều thời gian, cần có ý tưởng sáng tạo thì mới tạo nên trò chơi cuốn hút được.
+  * Có nhiều ý tưởng nhưng không phải cái nào cũng thực hiện được. 
   
 ### Hướng phát triển tiếp theo
   * Có thể sử dụng thư viện đồ họa khác đẹp hơn.
