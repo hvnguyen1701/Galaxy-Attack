@@ -145,7 +145,9 @@ Những `libpng warning` ở trên khi chạy chương trình không phải là 
   
 ### Kết luận
   * Làm game không quá khó, nhưng cần rất nhiều thời gian, cần có ý tưởng sáng tạo thì mới tạo nên trò chơi cuốn hút được.
-  * Có nhiều ý tưởng nhưng không phải cái nào cũng thực hiện được. 
+  * Có nhiều ý tưởng nhưng không phải cái nào cũng thực hiện được.
+  * Thư viện đồ họa khá quan trọng trong việc thiết kế game.
+  * Không cần dùng những thuật toán hay cấu trúc dữ liệu phức tạp cũng có thể làm nên một game tuyệt vời.
   
 ### Hướng phát triển tiếp theo
   * Có thể sử dụng thư viện đồ họa khác đẹp hơn.
