@@ -67,6 +67,7 @@ Những `libpng warning` ở trên khi chạy chương trình không phải là 
 [Video minh họa](https://youtu.be/hUkjESWQ4_4) (thật ra game rất mượt nhưng vì máy yếu nên lúc quay video hơi giật)
   
 ### Sinh ra và di chuyển:
+  * Trượt bản đồ (tạo cảm giác như đang di chuyển).
   * Phi thuyền địch sinh ra ngẫu nhiên ở phía trên màn hình và có thể di chuyển sang ngang (trái, phải) hoặc tiến tới.
   * Thiên thạch rơi ngẫu nhiên từ 2 bên và di chuyển xuống dưới.
   * Khi đạt được số điểm nhất định sẽ xuất hiện cổng không gian.
@@ -85,8 +86,8 @@ Những `libpng warning` ở trên khi chạy chương trình không phải là 
     * thiên thạch.
 
 ### Xử lý các vụ nổ:
-  * Vụ nổ phi thuyền địch.
-  * Vụ nổ phi thuyền người chơi.
+  * Vụ nổ phi thuyền địch (có hiệu ứng).
+  * Vụ nổ phi thuyền người chơi (có hiệu ứng).
 
 ### Điểm số:
   * In ra màn hình Menu điểm của 3 người có số điểm cao nhất (có cập nhật).
@@ -106,6 +107,8 @@ Những `libpng warning` ở trên khi chạy chương trình không phải là 
 
 ### Trong lúc chơi trò chơi nếu ấn phím `Esc` hoặc `Alt + Tab` hoặc phím `Windows`, game sẽ được dừng lại (chuyển qua màn hình Pause).
 
+### Hiệu ứng hình ảnh lúc dùng cổng không gian.
+
 ### Âm thanh:
   * Nhạc nền.
   * Tiếng nổ của phi thuyền người chơi.
@@ -121,15 +124,18 @@ Những `libpng warning` ở trên khi chạy chương trình không phải là 
 ## 4. Các kỹ thuật lập trình được sử dụng trong chương trình
   
 * Sử dụng mảng, vector, string, vector con trỏ, hàm sort.
+* Cấp phát động, quản lý bộ nhớ.
+* Sinh số ngẫu nhiên.
 * Nhập xuất file `.log`.
 * Sử dụng tham chiếu, tham trị, hằng tham chiếu.
 * Sử dụng Class
   * private, protected, public.
   * Class kế thừa.
   * Hàm khởi tạo (constructor) và hàm hủy (destructor).
-  * Hàm hằng
-* Tách hàm, tách file, có file `.h`.
+  * Hàm hằng.
+* Tách hàm, tách file, quản lý file `.cpp` và file `.h`.
 * Sử dụng thư viện đồ họa SDL2, SDL2 image, SDL2 mixer, SDL2 ttf.
+* Log và báo cáo lỗi.
 
 <a name="ket-luan"/>
   
