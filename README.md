@@ -66,6 +66,8 @@ Những `libpng warning` ở trên khi chạy chương trình không phải là 
 
 [Video minh họa](https://youtu.be/hUkjESWQ4_4) (thật ra game rất mượt nhưng vì máy yếu nên lúc quay video hơi giật)
   
+### Game có cốt truyện, hướng dẫn chơi.
+  
 ### Sinh ra và di chuyển:
   * Trượt bản đồ (tạo cảm giác như đang di chuyển).
   * Phi thuyền địch sinh ra ngẫu nhiên ở phía trên màn hình và có thể di chuyển sang ngang (trái, phải) hoặc tiến tới.
