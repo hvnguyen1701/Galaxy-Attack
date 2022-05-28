@@ -2,7 +2,7 @@
 
 * Họ tên: Hoàng Văn Nguyên
 * Mã sinh viên: 21020370
-* Lớp môn học: INT2215 1 nhóm 8
+* Lớp môn học: INT2215 1, nhóm 8
 
 ## Mục lục
 * [1. Hướng dẫn cài đặt](#huong-dan-cai-dat)  
@@ -57,6 +57,7 @@ Những `libpng warning` ở trên khi chạy chương trình không phải là 
   
 * Người chơi vào vai nhân vật Solu (solution) điều khiển phi thuyền Fantom chiến đấu với kẻ thù trong vũ trụ (chi tiết cốt truyện có thể xem trong game).
 * Người chơi có lượng giáp tối đa là 5, nếu lượng giáp trở về 0, chỉ cần dính một viên đạn nữa thì trò chơi sẽ kết thúc, nếu va chạm với tàu địch hoặc thiên thạch sẽ lập tức dừng trò chơi bất kể lượng giáp nhiều đến đâu.
+* Có thể thu thập các vật phẩm (item) để tăng lượng giáp, đổi loại đạn.
 * Cố gắng né tránh đạn của kẻ thù, phi thuyền địch, các viên thiên thạch.
 * Tiêu diệt được một kẻ địch sẽ được điểm, cố gắng lấy được điểm càng cao càng tốt trước khi bị game over.
 
@@ -153,7 +154,7 @@ Những `libpng warning` ở trên khi chạy chương trình không phải là 
   * Có thể sử dụng thư viện đồ họa khác đẹp hơn.
   * Thêm nhiều loại đạn có sức mạnh khác nhau.
   * Bổ sung thêm các vật phẩm (item) có công dụng khác nhau.
-  * Thêm loại đạn tên lửa hành trình theo dõi mục tiêu (dùng thuật toán A* hoặc BFS, ...).
+  * Thêm loại đạn tên lửa hành trình theo dõi mục tiêu (dùng thuật toán A* hoặc BFS, Dijkstra, ...).
   * Bổ sung thêm boss có thanh máu, thêm nhiều loại kẻ địch có sức mạnh khác nhau.
   * Thêm chức năng chọn độ khó của game (dễ, thường, khó).
   * Cải thiện lại giao diện.
