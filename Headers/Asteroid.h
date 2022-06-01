@@ -9,6 +9,7 @@ class Asteroid: public BaseObject {
     const int NUMBER_ROWS_IMAGE = 4;
     const int NUMBER_COLUMNS_IMAGE = 4;
     const int DISTANCE_BETWEEN_2_IMAGES = 4;
+    
     int iRow = 0, jColumn = 0, count = 0;
     bool isActive, isFromLeft;
 

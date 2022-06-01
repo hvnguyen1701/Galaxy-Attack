@@ -7,6 +7,7 @@ int main(int argc, char **argv) {
     
     Control gameProject;
 
+    // Initialize everything
     gameProject.initFontAndTexture();
     gameProject.initSoundAndMusic();
     gameProject.initBaseObjects();

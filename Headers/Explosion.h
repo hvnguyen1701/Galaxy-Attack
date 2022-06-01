@@ -5,6 +5,7 @@
 
 class Explosion: public BaseObject {
     const int DISTANCE_BETWEEN_2_IMAGES = 2;
+    
     int numberRowsImage, numberColumnsImage;
     int count = 0, iRow, jColumn;
     bool isActive;

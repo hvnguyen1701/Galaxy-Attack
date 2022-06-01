@@ -1,16 +1,19 @@
 #ifndef CONTROL_H
 #define CONTROL_H
 
+// C++ standard library headers
 #include <string>
 #include <vector>
 #include <algorithm>
 #include <fstream>
 
+// SDL2 library
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
 #include <SDL2/SDL_ttf.h>
 
+// My project's .h files
 #include "Asteroid.h"
 #include "Background.h"
 #include "Bar.h"
@@ -25,6 +28,7 @@
 #define SCREEN_WIDTH 500
 #define SCREEN_HEIGHT 695
 
+// RGB Colors
 const SDL_Color GRAY_COLOR = {128, 128, 128};
 const SDL_Color BLACK_COLOR = {0, 0, 0};
 const SDL_Color ORANGE_RED_COLOR = {255, 69, 0};
@@ -46,9 +50,11 @@ const int DISTANCE_BETWEEN_2_PLAYER_BULLETS = 25;
 const int DISTANCE_BETWEEN_2_ENEMY_BULLETS = 60;
 const int DISTANCE_BETWEEN_2_SPAWN_ENEMY = 70;
 const int DISTANCE_BETWEEN_2_SPAWN_ASTEROIDS = 100;
+const int ITEM_SPAWN_PROBABILITY = 7;
 
 const std::string WINDOW_TITLE = "Galaxy Attack";
 
+// Path
 const std::string IMAGES_PATH = "assets/images/";
 const std::string SOUNDS_PATH = "assets/sounds/";
 const std::string FONTS_PATH = "assets/fonts/";
@@ -122,6 +128,7 @@ class Control {
 
     void renderTop3BestScores();
 
+    // Generation handling functions
     void spawnEnemies();
     void spawnAsteroids();
     void spawnGates();
@@ -131,6 +138,7 @@ class Control {
     void spawnPlayerExplosion(int explosionX, int explosionY);
     void spawnPowerItem(int enemyX, int enemyY);
 
+    // Motion handling and rendering functions
     void scrollAndRenderBackground();
     void moveAndRenderPlayerShip();
     void moveAndRenderPlayerBullets();
@@ -140,12 +148,14 @@ class Control {
     void moveAndRenderGates();
     void moveAndRenderItems();
     
+    // Handling score
     void renderScore();
     void writeScoresToFile();
     void readScoresFromFile();
 
     void killEnemies();
 
+    // Collision handling functions
     void handleCollisionPlayerBulletsAndEnemies();
     void handleCollisionPlayerAndEnemyBullets();
     void handleCollisionPlayerAndEnemies();
@@ -154,6 +164,7 @@ class Control {
     void handleCollisionPlayerAndItems();
     void handleCollisionEnemiesAndAsteroids();
 
+    // Explosion handling functions
     void handleEnemyExplosions();
     void handlePlayerExplosion();
 

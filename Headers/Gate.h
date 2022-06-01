@@ -8,6 +8,7 @@ class Gate: public BaseObject {
     const int DISTANCE_BETWEEN_2_IMAGES = 4;
     const int NUMBER_ROWS_IMAGE = 1;
     const int NUMBER_COLUMNS_IMAGE = 16;
+    
     int count, iRow, jColumn;
     bool isActive;
 

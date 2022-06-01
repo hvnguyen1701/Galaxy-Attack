@@ -56,10 +56,12 @@ void Control::loadTtfTexture(SDL_Renderer *renderer, TTF_Font *font, const strin
 }
 
 void Control::initFontAndTexture() {
+    // Initialize font
     tarrgetAcademyRegularFont = TTF_OpenFont((FONTS_PATH + "TarrgetAcademyRegular.ttf").c_str(), 1000);;
     ocraextFont = TTF_OpenFont((FONTS_PATH + "OCRAEXT.TTF").c_str(), 1000);;
     sansFont = TTF_OpenFont((FONTS_PATH + "OpenSans-Regular.ttf").c_str(), 1000);
 
+    // Load texture
     loadTtfTexture(renderer, tarrgetAcademyRegularFont, "GALAXY", LIGHT_SEA_GREEN_COLOR, gameTitleLine1);
     loadTtfTexture(renderer, tarrgetAcademyRegularFont, "ATTACK", LIGHT_SEA_GREEN_COLOR, gameTitleLine2);
 
@@ -96,6 +98,7 @@ void Control::initFontAndTexture() {
 }
 
 void Control::initSoundAndMusic() {
+    // Load WAV file
     spawnPlayerBulletChunk = Mix_LoadWAV((SOUNDS_PATH + "Spawn Player Bullet.wav").c_str());
     spawnEnemyBulletChunk = Mix_LoadWAV((SOUNDS_PATH + "Spawn Enemy Bullet.wav").c_str());
     playerExplosionChunk = Mix_LoadWAV((SOUNDS_PATH + "Player Explosion.wav").c_str());
@@ -104,12 +107,14 @@ void Control::initSoundAndMusic() {
     spaceGateChunk = Mix_LoadWAV((SOUNDS_PATH + "Use Space Gate.wav").c_str());
     getItemChunk = Mix_LoadWAV((SOUNDS_PATH + "Get Item.wav").c_str());
 
+    // Load MP3 file
     soundtrack = Mix_LoadMUS((SOUNDS_PATH + "Soundtrack.mp3").c_str());
 }
 
 void Control::initBaseObjects() {
     readScoresFromFile();
 
+    // Set renderer
     for (int i = 0; i < NUMBER_MAPS; i++) {
         nebulaBgs[i].setRenderer(renderer);
         spaceGates[i].setRenderer(renderer);
@@ -128,6 +133,7 @@ void Control::initBaseObjects() {
 
     barShield.setRenderer(renderer);
 
+    // Load PNG image
     playerShip.loadImage(SHIP_PATH + "Player.png");
     nebulaBgs[0].loadImage(BACKGROUND_PATH + "Red Nebula.png");
     nebulaBgs[1].loadImage(BACKGROUND_PATH + "Blue Nebula.png");
@@ -150,6 +156,7 @@ void Control::initBaseObjects() {
 
     playerExplosion.setImage(playerExplosionTexture, 8, 8);
 
+    // Set the destination SDL_Rect structure
     playerExplosion.setWidthHeightDst(300, 300);
 
     playButton.setWidthHeightDst(100, 80);
@@ -195,6 +202,7 @@ void Control::initBaseObjects() {
 }
 
 void Control::initNewGame() {
+    // Set game state
     isRunningGame = true;
     isPaused = isGameOver = false;
 
@@ -275,7 +283,7 @@ void Control::showMenu() {
                     if (!isOnHelpScreen) {
                         if (playButton.isMouseOnButton(mouseX, mouseY)) {
                             SDL_WarpMouseInWindow(window, initialPlayerPosX + playerShip.getWidthDst()/2,
-                                                initialPlayerPosY + playerShip.getHeightDst()/2);
+                                                  initialPlayerPosY + playerShip.getHeightDst()/2);
                             isRunningMenu = false;
                             SDL_ShowCursor(SDL_DISABLE);
                         }
@@ -296,7 +304,6 @@ void Control::showMenu() {
             SDL_RenderClear(renderer);
             break;
         }
-
 
         // Update and render
         SDL_GetMouseState(&mouseX, &mouseY);
@@ -419,20 +426,24 @@ void Control::spawnGates() {
 }
 
 void Control::spawnPlayerBullets() {
-    if (countFramePlayerBullet == DISTANCE_BETWEEN_2_PLAYER_BULLETS) {
+    if (countFramePlayerBullet >= DISTANCE_BETWEEN_2_PLAYER_BULLETS) {
         playerBullets.push_back(new Bullet(renderer));
         playerBullets.back()->setImage(playerBulletTextures[indexCurrentPlayerBullet]);
         playerBullets.back()->setActivation(true);
         playerBullets.back()->setPositionDst(mouseX - playerBullets.back()->getWidthDst()/2,
                                             mouseY - playerShip.getHeightDst()/2);
+
+        // Reset
         countFramePlayerBullet = 0;
 
+        // Audio
         Mix_PlayChannel(-1, spawnPlayerBulletChunk, 0);
     }
 }
 
 void Control::spawnEnemiesBullets() {
-    if (countFrameEnemyBullet != DISTANCE_BETWEEN_2_ENEMY_BULLETS) return;
+    if (countFrameEnemyBullet < DISTANCE_BETWEEN_2_ENEMY_BULLETS) return;
+    // Reset
     countFrameEnemyBullet = 0;
 
     for (auto enemy: enemyShips)
@@ -444,6 +455,7 @@ void Control::spawnEnemiesBullets() {
                                                   enemy->getDst().y + enemy->getHeightDst() - 20);            
         }
     
+    // Audio
     Mix_PlayChannel(-1, spawnEnemyBulletChunk, 0);
 }
 
@@ -453,6 +465,7 @@ void Control::spawnEnemyExplosion(int explosionX, int explosionY) {
     enemyExplosions.back()->setPositionDst(explosionX, explosionY);
     enemyExplosions.back()->setActivation(true);
 
+    // Audio
     Mix_PlayChannel(-1, enemyExplosionChunk, 0);
 }
 
@@ -460,11 +473,12 @@ void Control::spawnPlayerExplosion(int explosionX, int explosionY) {
     playerExplosion.setPositionDst(explosionX, explosionY);
     playerExplosion.setActivation(true);
     
+    // Audio
     Mix_PlayChannel(-1, playerExplosionChunk, 0);
 }
 
 void Control::spawnPowerItem(int enemyX, int enemyY) {
-    if (!powerItem.getActivation() && rand()%7 == 0) {
+    if (!powerItem.getActivation() && rand()%ITEM_SPAWN_PROBABILITY == 0) {
         powerItem.setActivation(true);
         powerItem.setPositionDst(enemyX, enemyY);
     }
@@ -551,6 +565,7 @@ void Control::renderScore() {
     string scoreString = to_string(score);
     SDL_Rect digitDst = {scoreTextRect.x + scoreTextRect.w + 5, scoreTextRect.y + 7, 
                          scoreTextRect.h - 10, scoreTextRect.h - 10};
+
     for (size_t i = 0; i < scoreString.size(); i++) {
         int digit = scoreString[i] - '0';
         SDL_RenderCopy(renderer, digitTextures[digit], nullptr, &digitDst);
@@ -606,6 +621,7 @@ void Control::handleCollisionPlayerBulletsAndEnemies() {
                         spawnEnemyExplosion(enemyDst.x, enemyDst.y);
                         spawnPowerItem(enemyDst.x, enemyDst.y);
 
+                        // Handling score
                         score++;
                         if (indexCurrentPlayerBullet >= 5) score++;
 
@@ -719,6 +735,7 @@ void Control::handleCollisionPlayerAndItems() {
 
     // Collision
     if (SDL_HasIntersection(&playerDst, &itemDst)) {
+        // Audio
         Mix_PlayChannel(-1, getItemChunk, 0);
 
         powerItem.setActivation(false);
@@ -726,6 +743,7 @@ void Control::handleCollisionPlayerAndItems() {
         if (indexCurrentPlayerBullet < NUMBER_PLAYER_BULLETS - 1) 
             indexCurrentPlayerBullet++;
 
+        // Set shield
         playerShip.setShield(barShield.getState() + 1, MAX_PLAYER_SHIELD);
         barShield.setState(barShield.getState() + 1);
     }
@@ -815,31 +833,39 @@ void Control::playGame() {
 
         scrollAndRenderBackground();
 
+        // Handling enemy ships
         spawnEnemies();
         moveAndRenderEnemies();
         handleEnemyExplosions();
         killEnemies();
 
+        // Handling asteroids
         spawnAsteroids();
         moveAndRenderAsteroids();
 
+        // Handling space gates
         moveAndRenderGates();
 
         handleCollisionEnemiesAndAsteroids();
 
         if (!playerShip.getDead()) {
+            // Handling player ship
             moveAndRenderPlayerShip();
 
+            // Handling player bullets
             spawnPlayerBullets();
             moveAndRenderPlayerBullets();
             handleCollisionPlayerBulletsAndEnemies();
 
+            // Handling enemy bullets
             spawnEnemiesBullets();
             moveAndRenderEnemiesBullets();
 
+            // Handling space gates
             spawnGates();
             handleCollisionPlayerAndGates();
 
+            // Handling player collision
             handleCollisionPlayerAndEnemyBullets();
             handleCollisionPlayerAndAsteroids();
             handleCollisionPlayerAndEnemies();
@@ -851,9 +877,9 @@ void Control::playGame() {
         barShield.render();
 
         renderScore();
-    
-        if (isGameOver) SDL_RenderCopy(renderer, gameOverTexture, nullptr, nullptr);
         
+        // The Game Over screen appears after the player spaceship is finished exploding
+        if (isGameOver) SDL_RenderCopy(renderer, gameOverTexture, nullptr, nullptr);
         if (!playerExplosion.getActivation() && playerShip.getDead()) {
             isGameOver = true;
             SDL_ShowCursor(SDL_ENABLE);

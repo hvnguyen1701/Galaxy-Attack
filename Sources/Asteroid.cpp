@@ -2,6 +2,8 @@
 
 Asteroid::Asteroid(SDL_Renderer *renderer, int screenWidth, int screenHeight): BaseObject(renderer) {
     dst.w = dst.h = 65;
+
+    // Random left or right of the screen
     if (rand()%2 == 0) {
         isFromLeft = true;
         dst.x = -dst.w;
@@ -10,6 +12,7 @@ Asteroid::Asteroid(SDL_Renderer *renderer, int screenWidth, int screenHeight): B
         isFromLeft = false;
         dst.x = screenWidth + dst.w;
     }
+
     dst.y = rand()%(screenHeight - 9*screenHeight/10);
     isActive = true;
 }
@@ -44,6 +47,7 @@ void Asteroid::move(int screenWidth, int screenHeight) {
 void Asteroid::animate() {
     src.x = src.w*jColumn;
     src.y = src.h*iRow;
+    
     count++;
     if (count == DISTANCE_BETWEEN_2_IMAGES) {
         jColumn++;
